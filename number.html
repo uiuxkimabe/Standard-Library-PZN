@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number</title>
+</head>
+<body>
+    <script>
+
+        const input = "1234"
+        const convertinput = Number(input)
+
+        console.info(typeof input)
+        console.info(typeof convertinput)
+        console.info(convertinput)
+        console.info(Number("salah"))
+
+        // NUMBER STATIC PROPERTIES
+        console.info(Number.EPSILON)
+        console.info(Number.MAX_VALUE)
+        console.info(Number.MAX_SAFE_INTEGER)
+        console.info(Number.MIN_VALUE)
+        console.info(Number.MIN_SAFE_INTEGER)
+
+
+        // NUMBER STATIC METHOD
+        const data = Number('1234 ')
+        console.info(Number.isNaN(data))
+        console.info(Number.isInteger(data))
+
+        // NUMBER INSTANCE METHOD
+        const value = Number(12345)
+        console.info(value.toLocaleString('id-ID'))
+
+    </script>
+</body>
+</html>

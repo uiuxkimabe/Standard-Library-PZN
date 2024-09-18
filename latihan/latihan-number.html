@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Number</title>
+</head>
+<body>
+
+    <input type="date" name="check-in" class="date check-in">
+    <input type="date" name="check-out" class="date check-out">
+    
+    <!-- day value -->
+    <input type="text" id="ci-day">
+    <input type="text" id="co-day">
+    
+    <button>process</button>
+    <script>
+
+        const checkIn = document.querySelector('.check-in');
+        console.info(checkIn)
+
+        const ciDay = document.querySelector('#ci-day');
+
+        checkIn.addEventListener('change',()=> {
+            console.info(ciDay.value = checkIn.value)
+        })
+
+
+        const nilaiInput = 1308
+        const kim = 1204
+        console.info(nilaiInput.toString(2), kim.toString(2))
+
+
+    </script>
+</body>
+</html>
