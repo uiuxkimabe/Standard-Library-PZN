@@ -3,35 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number</title>
+    <title>Library - Number</title>
 </head>
 <body>
     <script>
 
+        // Number a/ function u/ konversi ke type data number
+        // Jika string yg di konversi bukan berupa angka maka akan menjadi NaN
+
         const input = "1234"
-        const convertinput = Number(input)
+        const exString = "Salah1234"
+        const convertInput = Number(input)
+        const convertExString = Number(exString)
 
-        console.info(typeof input)
-        console.info(typeof convertinput)
-        console.info(convertinput)
-        console.info(Number("salah"))
+        console.info(input)
+        console.info(`${typeof input}`)
+        console.info(convertInput)
+        console.info(`${typeof convertInput}`)
+        console.info(convertExString) //NaN
 
-        // NUMBER STATIC PROPERTIES
-        console.info(Number.EPSILON)
+        // Static Properties
         console.info(Number.MAX_VALUE)
-        console.info(Number.MAX_SAFE_INTEGER)
         console.info(Number.MIN_VALUE)
+        console.info(Number.MAX_SAFE_INTEGER)
         console.info(Number.MIN_SAFE_INTEGER)
+        console.info(Number.EPSILON)
 
+        // Static Method
+        // Contoh Number.isInteger (Nilai yang habis dibagi 2)
 
-        // NUMBER STATIC METHOD
-        const data = Number('1234 ')
-        console.info(Number.isNaN(data))
-        console.info(Number.isInteger(data))
+        const maxScore = Number('200')
 
-        // NUMBER INSTANCE METHOD
-        const value = Number(12345)
-        console.info(value.toLocaleString('id-ID'))
+        function compare(nilaiPeserta) {
+            if (Number.isInteger(nilaiPeserta / maxScore)) {
+                return console.info('Nilai Tercapai')
+            } else {
+                return console.info('Nilai gagal')
+            }
+        }   
+
+        compare(400)
+
+        // Instance Method
+
+        const rn = Number("130805")
+        const ka = Number("120495")
+        console.info(rn.toString(8))
+        console.info(ka.toString(8))
+        console.info(rn.toLocaleString('id-ID'))
+        console.info(ka.toLocaleString('id-ID'))
+        
+        
 
     </script>
 </body>
