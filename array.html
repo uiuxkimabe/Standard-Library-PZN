@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        // Instance Methode Pada Array
+        // contoh array
+
+        const fruits = [] //Kita memiliki array kosong
+
+        fruits.push("Lengkeng", "Melon", "Pepaya", "Jeruk")
+        console.info(fruits)
+        console.info(fruits.length)
+        console.info(Object.keys(fruits)) // Object.key(namavariabel) untuk menampilkan nomor index ("keys")
+
+        // Array Loop
+        // Untuk Iterasi Array biasanya kita menggunakan for in atau for of
+        // Namun array juga memiliki methode forEach()
+        // Method forEach() ini digunakan juga untuk melakukan iterasi pada data array
+
+        // Contoh
+
+        const array = ["Kiki", "Afrianto", "Brata"]
+
+        // Cara 1
+        // forEach() akan memilih semua value (element) yang berada di dalam array nya.
+        array.forEach((value, index) => {
+            console.info(`Index ${index} : ${value}`) // Menampilkan nomor index beserta value di dalamnya.
+        });
+
+        // Cara 2
+        array.forEach((value, index) => console.info(`Nomor index ${index} : Memiliki Value ${value}`));
+
+        // Cara 3
+        array.forEach(value => console.info(`${value}`)); // Value menunjukan element / value yang ada di dalamnya
+
+        // Array Queue
+        // Dalam struktur data, terdapat tipe struktur bernama Queue (Antrian)
+        // Dimana data masuk akan di posisikan di urutan paling belakang
+        // Dan data keluar akan di posisikan dari urutan paling depan (FIFO) First In First Out
+        // Kita bisa menggunakan array dengan bantuan function push() untuk menambah data dari belakang (Urutan terakhir)
+        // dan Shift() untuk mengambil dan menghapus data paling depan.
+
+        // Contoh Array Queue
+        const antrian = []
+        
+        // untuk menambah bisa dilakukan dengan cara ini (menggunakan spesifik no index di posisi mana ingin di isi)
+        // antrian[0] = "Kiki"
+        // antrian[1] = "Afrianto"
+        // antrian[2] = "Brata"
+
+        // atau menggunakan funtion push() menambah dari posisi paling akhir (belakang)
+        antrian.push("Kiki")
+        antrian.push("Afrianto")
+        antrian.push("Brata")
+
+        console.info(antrian)
+        console.info(Object.keys(antrian))
+
+        // Menggunakan shift() untuk menghapus dari depan (Menghapus dan otomatis menyusun nomor indexnya)
+        antrian.shift()
+
+        console.info(antrian)
+        console.info(Object.keys(antrian))
+
+        // Array Stack
+        // Struktur Stack (Tumpukan) keblaikan dari Queue, aturannya mirip dengan tumpukan kartu
+        // Saat memasukan data, akan dimasukan di urutan paling belakang (atas)
+        // Sedangkan saat mengambil data akan diambil dari urutan paling belakang (atas) (LIFO) Last in First Out
+        // Untuk menambahkan urutan paling belakang menggunakan push()
+        // Dan untuk mengambil dan menghapus data dari urutan paling belakang, kita bisa menggunakan funtion pop()
+
+        const kartu = []
+
+        kartu.push("King")
+        kartu.push("Queen")
+        kartu.push("Love")
+        kartu.push('AS')
+        kartu.push("Skop")
+
+        kartu.sort()
+
+        kartu.pop()
+        kartu.pop()
+        kartu.pop()
+        
+        console.info(kartu)
+        console.info(Object.keys(kartu))
+
+        // Array Search
+        // Array yang memiliki fungsi untuk pencarian
+        // find(value => boolean) : value  ==>> Mencari data sesuai dengan kondisi
+        // findIndex(value => boolean) : number ==>> Mencari data index sesuai dengan kondisi
+        // includes(value) : boolean (true/false) ==>> Mengecek apakah terdapat data
+        // indexOf(value) : number ==>> Mengecek posisi index data
+        // lastIndexOf(value) : number ==>> Mengecek posisi index data terakhir
+
+        // Contoh
+        const cari = [13,12,3,11,7,23,13]
+        console.info(cari.find(value => value < 15)) // Temukan value yang memiliki nilai kurang dari 15 (Akan mencatat paling awal jika ada)
+        console.info(cari.findIndex(value => value < 15)) // Value Index ke 2 : 3
+        console.info(cari.includes(10)) // apakah data dengan nilai 10 ada pada array : false
+        console.info(cari.indexOf(13)) // berada pada index berapakah value 12 pada array : nomor indexnya 1 Jika tidak ada nilainya -1
+        console.info(cari.lastIndexOf(13)) // Jika ada nilai yang sama pada array lastIndexOf(value) akan mengarahkan pada value yang sama (terakhir) dan akan menunjkan nomor index terakhir tersebut.
+
+        // Array Filter
+        // Array yang memiliki function untuk melakukan filter pada data
+        // filter(value => boolean) : Array ===>>> Melakukan filter data yang kondisinya bernilai true dan membuat array tersendiri.
+
+        const barisData = [1,2,3,4,5,6,7,8,9,10]
+
+        console.info(barisData.filter(value => value % 2 === 1)) //Filter data ganjil
+        console.info(barisData.filter(value => value % 2 === 0)) //Filter data genap
+        console.info(barisData.filter(value => 4 * 5 < 10))
+
+        console.info(barisData)
+
+        // Array Transform
+        // Array juga memiliki function yang digunakan untuk transformasi (merubah) data :
+        // map(value => result) : Array<result ===>>> Melakukan transformasi tiap value dan menghasilkan array result
+        // reduce(resultBefore, value => result): result ===>>> Melakukan transform dengan menggunakan value array dan value selanjutnya, lalu hasilnya dilanjutkan ke iterasi selanjutnya
+        // reduceRight(resultBefore, value => result) ===>>> Sama seperti reduce(), namun dilakukan dari belakang
+
+        // Contoh Maps
+        const names = ["Kiki", "Afrianto", "Brata"]
+        console.info(names.map(value => value.toUpperCase()))
+
+        // Contoh reduce
+        const numb = [1,2,3,4,5,6,7,8,9]
+        console.info(numb.reduce((result, value) => result + value))
+
+        // Contoh reduceRIght
+        const nomor = [1,2,3,4,5]
+        console.info(nomor.reduceRight((hasil, value) => hasil + value))
+
+
+
+    </script>
+</body>
+</html>
